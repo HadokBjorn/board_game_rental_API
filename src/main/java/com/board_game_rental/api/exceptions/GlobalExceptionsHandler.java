@@ -16,4 +16,9 @@ public class GlobalExceptionsHandler {
     public ResponseEntity<String> handleConflict(ConflictException exception){
         return ResponseEntity.status(HttpStatus.CONFLICT).body(exception.getMessage());
     }
+
+    @ExceptionHandler({UnprocessableEntityException.class})
+    public ResponseEntity<String> handleUnprocessableEntity(UnprocessableEntityException exception){
+        return ResponseEntity.status(HttpStatus.UNPROCESSABLE_ENTITY).body(exception.getMessage());
+    }
 }
