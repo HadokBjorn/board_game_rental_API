@@ -19,8 +19,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.test.context.ActiveProfiles;
 
 import com.board_game_rental.api.dtos.GameDto;
-import com.board_game_rental.api.exceptions.ConflictException;
-import com.board_game_rental.api.exceptions.NotFoundException;
 import com.board_game_rental.api.models.GameModel;
 import com.board_game_rental.api.repositories.CustomerRepository;
 import com.board_game_rental.api.repositories.GameRepository;
