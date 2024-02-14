@@ -5,7 +5,7 @@ COPY . .
 
 RUN chmod +x mvnw
 
-RUN mvnw clean install -DskipTest
+RUN /app/mvnw clean install -DskipTest
 
 # Estágio de execução
 FROM eclipse-temurin:17-jdk-alpine
