@@ -5,7 +5,7 @@ COPY . .
 
 RUN chmod +x mvnw
 
-RUN /app/mvnw clean install -DskipTest
+RUN mvn clean package dockerfile:build -DskipTest
 
 # Estágio de execução
 FROM eclipse-temurin:17-jdk-alpine
