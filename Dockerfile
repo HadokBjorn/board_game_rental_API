@@ -2,7 +2,11 @@
 FROM eclipse-temurin:17-jdk-alpine AS build
 WORKDIR /app
 COPY . .
-RUN chmod +x mvnw && /bin/sh -c "mvnw clean install"
+# Conceda permissões de execução ao mvnw
+RUN chmod +x mvnw
+
+# Execute o comando mvnw clean install
+RUN ./mvnw clean install
 
 # Estágio de execução
 FROM eclipse-temurin:17-jdk-alpine
