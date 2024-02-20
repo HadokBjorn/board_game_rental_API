@@ -3,6 +3,7 @@ package com.board_game_rental.api.models;
 import java.time.LocalDate;
 
 import com.board_game_rental.api.dtos.RentalDto;
+import com.fasterxml.jackson.annotation.JsonFormat;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -38,12 +39,14 @@ public class RentalModel {
     private Long id;
 
     @Column(nullable = false)
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
     private LocalDate rentDate;
 
     @Column(nullable = false)
     private Long daysRented;
 
     @Column(nullable = true)
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
     private LocalDate returnDate;
     
     @Column(nullable = false)
